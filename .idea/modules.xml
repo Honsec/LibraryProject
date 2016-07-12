@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LibraryProject.iml" filepath="$PROJECT_DIR$/LibraryProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/indicatorlib/indicatorlib.iml" filepath="$PROJECT_DIR$/indicatorlib/indicatorlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerview_hearder_footer/app.iml" filepath="$PROJECT_DIR$/recyclerview_hearder_footer/app.iml" />
+    </modules>
+  </component>
+</project>
