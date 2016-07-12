@@ -1,1 +1,1 @@
-include ':recyclerview_hearder_footer', ':indicatorlib'
+include ':demo_indicatorlib', ':indicatorlib'

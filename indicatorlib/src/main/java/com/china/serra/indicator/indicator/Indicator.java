@@ -120,7 +120,7 @@ public interface Indicator {
 	 * 
 	 */
 	public static abstract class IndicatorAdapter {
-		private Set<DataSetObserver> observers = new LinkedHashSet<Indicator.DataSetObserver>(2);
+		private Set<DataSetObserver> observers = new LinkedHashSet<DataSetObserver>(2);
 
 		public abstract int getCount();
 

@@ -47,7 +47,6 @@ import java.util.List;
 //  mIndicator.setViewPager(frag_receivedad_viewpager,index);
 
 
-
 /**
  * @author hongyangAndroid
  *         http://blog.csdn.net/lmj623565791/
@@ -55,7 +54,7 @@ import java.util.List;
 public class ViewPagerIndicator extends LinearLayout {
 
 
-    private   int mGuider_color = 0x0000000;
+    private int mGuider_color = 0x0000000;
     private Paint mPaint;
 
     private Path mPath;
@@ -80,11 +79,11 @@ public class ViewPagerIndicator extends LinearLayout {
     private static final int DEFAULT_COLOR_TEXT_NORMAL = 0x0000000;
     private static final int DEFAULT_COLOR_TEXT_HIGHLIGHT = 0x000000;
 
-    private   int mTab_color_def = Color.parseColor("#000000");
-    private   int mTab_color_pres = Color.parseColor("#000000");
+    private int mTab_color_def = Color.parseColor("#000000");
+    private int mTab_color_pres = Color.parseColor("#000000");
 
     private List<String> mTitles;
-    private int mRectWidth ;
+    private int mRectWidth;
     private List<Integer> imageViewId;
 
     public ViewPagerIndicator(Context context) {
@@ -100,34 +99,19 @@ public class ViewPagerIndicator extends LinearLayout {
 
         for (int i = 0; i < a.getIndexCount(); i++) {
 
-            switch (a.getIndex(i)) {
 
-                case R.styleable.ViewPagerIndicator_visible_tab_color_default:
-
-                    mTab_color_def = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_default,DEFAULT_COLOR_TEXT_NORMAL);
-
-                    break;
-                case R.styleable.ViewPagerIndicator_visible_tab_color_pres:
-
-                    mTab_color_pres = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_pres,DEFAULT_COLOR_TEXT_HIGHLIGHT);
-
-                    break;
-                case R.styleable.ViewPagerIndicator_visible_tab_color_guider:
-
-                    mGuider_color = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_guider,DEFAULT_COLOR_TEXT_HIGHLIGHT);
-
-                    break;
-
-                case R.styleable.ViewPagerIndicator_visible_tab_count:
-                    mTabVisibleCount = a.getInt(
-                            R.styleable.ViewPagerIndicator_visible_tab_count,
-                            COUNT_DEFAULT_TAB);
-
-                    break;
-
+            if (a.getIndex(i) == R.styleable.ViewPagerIndicator_visible_tab_color_default) {
+                mTab_color_def = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_default, DEFAULT_COLOR_TEXT_NORMAL);
+            } else if (a.getIndex(i) == R.styleable.ViewPagerIndicator_visible_tab_color_pres) {
+                mTab_color_pres = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_pres, DEFAULT_COLOR_TEXT_HIGHLIGHT);
+            } else if (a.getIndex(i) == R.styleable.ViewPagerIndicator_visible_tab_color_guider) {
+                mGuider_color = a.getColor(R.styleable.ViewPagerIndicator_visible_tab_color_guider, DEFAULT_COLOR_TEXT_HIGHLIGHT);
+            } else if (a.getIndex(i) == R.styleable.ViewPagerIndicator_visible_tab_count) {
+                mTabVisibleCount = a.getInt(
+                        R.styleable.ViewPagerIndicator_visible_tab_count,
+                        COUNT_DEFAULT_TAB);
 
             }
-
 
         }
 
@@ -135,7 +119,6 @@ public class ViewPagerIndicator extends LinearLayout {
             mTabVisibleCount = COUNT_DEFAULT_TAB;
         }
         a.recycle();
-
 
 
         // 初始化画笔
@@ -160,7 +143,8 @@ public class ViewPagerIndicator extends LinearLayout {
         super.dispatchDraw(canvas);
 
     }
-    private int height= 0;
+
+    private int height = 0;
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -168,10 +152,10 @@ public class ViewPagerIndicator extends LinearLayout {
 
         height = (int) (w / mTabVisibleCount * RADIO_TRIANGLE_WIDTH);
 
-        if(mTabVisibleCount == 4){
-            mTriangleWidth = (int)(w/mTabVisibleCount)*15/16;
-        }else{
-            mTriangleWidth = (int)(w/mTabVisibleCount)/2;
+        if (mTabVisibleCount == 4) {
+            mTriangleWidth = (int) (w / mTabVisibleCount) * 15 / 16;
+        } else {
+            mTriangleWidth = (int) (w / mTabVisibleCount) / 2;
         }
 //        mTriangleWidth = Math.min(mTriangleWidth, DIMENSION_TRIANGLE_WIDTH_MAX);
         mInitTranslationX = w / mTabVisibleCount / 2 - mTriangleWidth / 2;
@@ -275,14 +259,14 @@ public class ViewPagerIndicator extends LinearLayout {
         }
     }
 
-    public void setTabItemTitles(List<String> titles,List<Integer> imageViewId) {
+    public void setTabItemTitles(List<String> titles, List<Integer> imageViewId) {
         if (titles != null && titles.size() > 0) {
             this.removeAllViews();
             mTitles = titles;
             this.imageViewId = imageViewId;
 
-            for(int i=0;i<mTitles.size();i++){
-                addView(generateTextView(mTitles.get(i),imageViewId.get(i)));
+            for (int i = 0; i < mTitles.size(); i++) {
+                addView(generateTextView(mTitles.get(i), imageViewId.get(i)));
             }
 
             setItemClickEvent();
@@ -324,7 +308,7 @@ public class ViewPagerIndicator extends LinearLayout {
      * @param title
      * @return
      */
-    private View generateTextView(String title,Integer imageInt) {
+    private View generateTextView(String title, Integer imageInt) {
         TextView tv = new TextView(getContext());
         LayoutParams lp = new LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
@@ -335,15 +319,10 @@ public class ViewPagerIndicator extends LinearLayout {
         tv.setTextColor(mTab_color_def);
         tv.setSelected(false);
         tv.setLayoutParams(lp);
-        tv.setCompoundDrawablesWithIntrinsicBounds(0,imageInt,0,0);
+        tv.setCompoundDrawablesWithIntrinsicBounds(0, imageInt, 0, 0);
 
         return tv;
     }
-
-
-
-
-
 
 
     private ViewPager mViewPager;
@@ -417,7 +396,7 @@ public class ViewPagerIndicator extends LinearLayout {
         for (int i = 0; i < getChildCount(); i++) {
             View view = getChildAt(i);
             if (view instanceof TextView) {
-                ((TextView)view).setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+                ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                 view.setSelected(false);
 //                ((TextView) view).setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             }
@@ -435,7 +414,7 @@ public class ViewPagerIndicator extends LinearLayout {
         resetTextViewColor();
         View view = getChildAt(pos);
         if (view instanceof TextView) {
-            ((TextView)view).setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
+            ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             view.setSelected(true);
 //            ((TextView) view).setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         }
