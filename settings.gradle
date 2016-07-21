@@ -1,1 +1,1 @@
-include ':demo_indicatorlib', ':indicatorlib'
+include ':demo_indicatorlib', ':indicatorlib', ':tool_utils', ':baselib', ':baselibdemo'

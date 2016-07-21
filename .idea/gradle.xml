@@ -8,15 +8,21 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/baselib" />
+            <option value="$PROJECT_DIR$/baselibdemo" />
             <option value="$PROJECT_DIR$/demo_indicatorlib" />
             <option value="$PROJECT_DIR$/indicatorlib" />
+            <option value="$PROJECT_DIR$/tool_utils" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/baselib" />
+            <option value="$PROJECT_DIR$/baselibdemo" />
             <option value="$PROJECT_DIR$/demo_indicatorlib" />
             <option value="$PROJECT_DIR$/indicatorlib" />
+            <option value="$PROJECT_DIR$/tool_utils" />
           </set>
         </option>
       </GradleProjectSettings>
