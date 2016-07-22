@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/demo_magicindicator/demo_magicindicator.iml" filepath="$PROJECT_DIR$/demo_magicindicator/demo_magicindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/hf_load_springview/hf_load_springview.iml" filepath="$PROJECT_DIR$/hf_load_springview/hf_load_springview.iml" />
       <module fileurl="file://$PROJECT_DIR$/indicatorlib/indicatorlib.iml" filepath="$PROJECT_DIR$/indicatorlib/indicatorlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lableview_stick/lableview_stick.iml" filepath="$PROJECT_DIR$/lableview_stick/lableview_stick.iml" />
       <module fileurl="file://$PROJECT_DIR$/loadingindicator/loadingindicator.iml" filepath="$PROJECT_DIR$/loadingindicator/loadingindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/magicindicator/magicindicator.iml" filepath="$PROJECT_DIR$/magicindicator/magicindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/tool_utils/tool_utils.iml" filepath="$PROJECT_DIR$/tool_utils/tool_utils.iml" />
