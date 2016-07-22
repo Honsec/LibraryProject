@@ -7,10 +7,10 @@ import android.util.Log;
  * Created by Hongsec on 2016-07-21.
  */
 public class UtilsLog  {
-    
-    private static  final String tag_default="Default_Log";
 
-    private static boolean _IS_LOG =true;
+    public static boolean _IS_LOG =true;
+
+    private static  final String tag_default="Default_Log";
 
     public static void v( String msg) {
         if(_IS_LOG)

@@ -1,1 +1,1 @@
-include ':demo_indicatorlib', ':indicatorlib', ':tool_utils', ':baselib', ':baselibdemo'
+include ':demo_indicatorlib', ':indicatorlib', ':tool_utils', ':baselib', ':baselibdemo', ':loadingindicator', ':hf_load_springview', ':demo_magicindicator', ':magicindicator', ':demo_loadingindicator'
