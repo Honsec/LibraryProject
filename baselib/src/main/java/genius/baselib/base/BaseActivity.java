@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import de.greenrobot.event.EventBus;
-import genius.baselib.bus.BusBuilder;
+import genius.baselib.bus.BusMessage;
 import genius.baselib.bus.BusTool;
 import genius.baselib.receiver.NetworkReceiver;
 import genius.utils.UtilsNetwork;
@@ -62,8 +62,8 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      *
      * @param myBus
      */
-    public void onEvent(BusBuilder myBus) {
-        if (BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEvent, this.getClass().getSimpleName())) {
+    public void onEvent(BusMessage myBus) {
+        if (BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEvent, this.getClass().getSimpleName())) {
             return;
         }
         Bus_onEvent(myBus);
@@ -76,8 +76,8 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      *
      * @param myBus
      */
-    public void onEventMainThread(BusBuilder myBus) {
-        if (BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventMainThread, this.getClass().getSimpleName())) {
+    public void onEventMainThread(BusMessage myBus) {
+        if (BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventMainThread, this.getClass().getSimpleName())) {
             return;
         }
         Bus_onEventMainThread(myBus);
@@ -90,8 +90,8 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      *
      * @param myBus
      */
-    public void onEventBackgroundThread(BusBuilder myBus) {
-        if (BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventBackgroundThread, this.getClass().getSimpleName())) {
+    public void onEventBackgroundThread(BusMessage myBus) {
+        if (BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventBackgroundThread, this.getClass().getSimpleName())) {
             return;
         }
         Bus_onEventBackgroundThread(myBus);
@@ -104,8 +104,8 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      *
      * @param myBus
      */
-    public void onEventAsync(BusBuilder myBus) {
-        if (BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventAsync, this.getClass().getSimpleName())) {
+    public void onEventAsync(BusMessage myBus) {
+        if (BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventAsync, this.getClass().getSimpleName())) {
             return;
         }
         Bus_onEventAsync(myBus);
@@ -134,7 +134,7 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      ，如果执行耗时操作容易导致事件分发延迟。
      * @param myBus
      */
-    protected   void Bus_onEvent(BusBuilder myBus){};
+    protected   void Bus_onEvent(BusMessage myBus){};
 
     /**
      *   如果使用onEventMainThread作为订阅函数，
@@ -143,7 +143,7 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      因为在Android中只能在UI线程中跟新UI，所以在onEvnetMainThread方法中是不能执行耗时操作的。
      * @param myBus
      */
-    protected   void Bus_onEventMainThread(BusBuilder myBus){};
+    protected   void Bus_onEventMainThread(BusMessage myBus){};
 
     /**
      *  如果使用onEventBackgrond作为订阅函数，那么如果事件是在UI线程中发布出来的，那么
@@ -151,7 +151,7 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      如果事件本来就是子线程中发布出来的，那么onEventBackground函数直接在该子线程中执行。
      * @param myBus
      */
-    protected   void Bus_onEventBackgroundThread(BusBuilder myBus){};
+    protected   void Bus_onEventBackgroundThread(BusMessage myBus){};
 
 
     /**
@@ -159,7 +159,7 @@ public abstract  class BaseActivity extends BaseAbstractActivity  {
      那么无论事件在哪个线程发布，都会创建新的子线程在执行onEventAsync.
      * @param myBus
      */
-    protected  void Bus_onEventAsync(BusBuilder myBus){};
+    protected  void Bus_onEventAsync(BusMessage myBus){};
     protected   void onNetNOT_CONNECTED(){};
     protected   void onNetWIFI_CONNECTED(){};
     protected   void onNetMOBILE_CONNECTED(){};

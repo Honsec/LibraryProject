@@ -1,1 +1,1 @@
-include ':demo_indicatorlib', ':indicatorlib', ':tool_utils', ':baselib', ':baselibdemo', ':loadingindicator', ':hf_load_springview', ':demo_magicindicator', ':magicindicator', ':demo_loadingindicator', ':lableview_stick'
+include ':tool_utils', ':baselib', ':demo_baselib', ':loadingindicator', ':hf_load_springview', ':demo_magicindicator', ':magicindicator', ':demo_loadingindicator', ':lableview_stick', ':commonadapter', ':tiger_db', ':demo_tigerdb'

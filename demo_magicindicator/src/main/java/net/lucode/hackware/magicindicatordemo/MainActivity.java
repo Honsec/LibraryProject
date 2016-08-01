@@ -221,7 +221,6 @@ public class MainActivity extends Activity {
             public void run() {
                 BadgePagerTitleView badgePagerTitleView = (BadgePagerTitleView) commonNavigator2.getPagerTitleView(3);
                 badgePagerTitleView.setBadgeView(null);
-
                 BadgePagerTitleView badgePagerTitleView1 = (BadgePagerTitleView) commonNavigator2.getPagerTitleView(2);
                 TextView textView = (TextView) LayoutInflater.from(badgePagerTitleView1.getContext()).inflate(R.layout.simple_count_badge_layout, null);
                 textView.setText("1");

@@ -3,6 +3,7 @@ package genius.baselib.base;
 import android.app.Application;
 
 import genius.baselib.PreferenceUtil;
+import genius.baselib.center.Config;
 import genius.baselib.receiver.NetworkReceiver;
 import genius.utils.UtilsNetwork;
 
@@ -17,9 +18,15 @@ public class BaseApplication extends Application {
         super.onCreate();
 
 
+        Config.init(true,"I will be back",true);
+
         updateNetworkStatus();
     }
 
+
+    /**
+     * 更新网络状态并保存
+     */
     private void updateNetworkStatus() {
         UtilsNetwork.TYPE connectivityStatus = UtilsNetwork.getConnectivityStatus(this);
         if(connectivityStatus == UtilsNetwork.TYPE.NOT_CONNECTED){

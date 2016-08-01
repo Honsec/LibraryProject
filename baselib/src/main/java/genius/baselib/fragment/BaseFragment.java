@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import de.greenrobot.event.EventBus;
 import genius.baselib.base.BaseActivity;
 import genius.baselib.base.BaseApplication;
-import genius.baselib.bus.BusBuilder;
+import genius.baselib.bus.BusMessage;
 import genius.baselib.bus.BusTool;
 import genius.baselib.receiver.NetworkReceiver;
 import genius.utils.UtilsNetwork;
@@ -20,10 +20,10 @@ public abstract class BaseFragment extends BaseAbstractFragment {
     protected   void onNetNOT_CONNECTED(){};
     protected   void onNetWIFI_CONNECTED(){};
     protected   void onNetMOBILE_CONNECTED(){};
-    protected  void Bus_onEvent(BusBuilder myBus){};
-    protected  void Bus_onEventMainThread(BusBuilder myBus){};
-    protected  void Bus_onEventBackgroundThread(BusBuilder myBus){};
-    protected  void Bus_onEventAsync(BusBuilder myBus){};
+    protected  void Bus_onEvent(BusMessage myBus){};
+    protected  void Bus_onEventMainThread(BusMessage myBus){};
+    protected  void Bus_onEventBackgroundThread(BusMessage myBus){};
+    protected  void Bus_onEventAsync(BusMessage myBus){};
 
 
     @Override
@@ -77,8 +77,8 @@ public abstract class BaseFragment extends BaseAbstractFragment {
      * 자식에서 쓸필요 없음
      * @param myBus
      */
-    public void onEvent(BusBuilder myBus){
-        if(BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEvent,this.getClass().getSimpleName())){
+    public void onEvent(BusMessage myBus){
+        if(BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEvent,this.getClass().getSimpleName())){
             return ;
         }
         Bus_onEvent(myBus);
@@ -88,8 +88,8 @@ public abstract class BaseFragment extends BaseAbstractFragment {
      * 자식에서 쓸필요 없음
      * @param myBus
      */
-    public void onEventMainThread(BusBuilder myBus){
-        if(BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventMainThread,this.getClass().getSimpleName())){
+    public void onEventMainThread(BusMessage myBus){
+        if(BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventMainThread,this.getClass().getSimpleName())){
             return ;
         }
         Bus_onEventMainThread(myBus);
@@ -99,8 +99,8 @@ public abstract class BaseFragment extends BaseAbstractFragment {
      * 자식에서 쓸필요 없음
      * @param myBus
      */
-    public void onEventBackgroundThread(BusBuilder myBus){
-        if(BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventBackgroundThread,this.getClass().getSimpleName())){
+    public void onEventBackgroundThread(BusMessage myBus){
+        if(BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventBackgroundThread,this.getClass().getSimpleName())){
             return ;
         }
         Bus_onEventBackgroundThread(myBus);
@@ -110,8 +110,8 @@ public abstract class BaseFragment extends BaseAbstractFragment {
      * 자식에서 쓸필요 없음
      * @param myBus
      */
-    public void onEventAsync(BusBuilder myBus){
-        if(BusTool.onEventBusFilter(myBus, BusBuilder.BUSTYPE.onEventAsync,this.getClass().getSimpleName())){
+    public void onEventAsync(BusMessage myBus){
+        if(BusTool.onEventBusFilter(myBus, BusMessage.BUSTYPE.onEventAsync,this.getClass().getSimpleName())){
             return ;
         }
         Bus_onEventAsync(myBus);

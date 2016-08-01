@@ -4,6 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class UtilsSP {
   private   String TAG=TAG=UtilsSP.class.getSimpleName();
 
@@ -79,6 +85,71 @@ public class UtilsSP {
 	public synchronized void setValue(int resKey, String value) {
 		setValue(this.context.getString(resKey), value);
 	}
+
+	public synchronized void setValue(String key, Set<String> value) {
+		edit.putStringSet(key, value);
+		edit.commit();
+	}
+	public synchronized void setValue(int resKey, Set<String> value) {
+		setValue(this.context.getString(resKey), value);
+	}
+	public Set<String> getValue(String key, Set<String> defaultValue) {
+		return sp.getStringSet(key, defaultValue);
+	}
+
+	public Set<String> getValue(int resKey,  Set<String> defaultValue) {
+		return getValue(this.context.getString(resKey), defaultValue);
+	}
+
+
+	public synchronized void setValue(String key, ArrayList<String> value) {
+		Set<String> strings = new HashSet<>();
+		int i=0;
+		for(String str : value){
+			strings.add((i++)+"=>"+str);
+		}
+		edit.putStringSet(key, strings);
+		edit.commit();
+	}
+	public synchronized void setValue(int resKey, ArrayList<String> value) {
+		setValue(this.context.getString(resKey), value);
+	}
+
+	public ArrayList<String> getValue(String key, ArrayList<String> defaultValue) {
+
+		Set<String> stringSet = sp.getStringSet(key, new HashSet<String>());
+		Iterator<String> iterator = stringSet.iterator();
+
+		HashMap<String,String> stringStringHashMap = new HashMap<>();
+		ArrayList<String> result = new ArrayList<>();
+		while (iterator.hasNext()){
+			String next = iterator.next();
+			String[] split = next.split("=>");
+			if(split!=null){
+				if(split.length>1){
+					stringStringHashMap.put(split[0],next.substring(next.indexOf(split[1])));
+				}else{
+					stringStringHashMap.put(split[0],"");
+				}
+			}
+		}
+
+		for(int i =0 ; i<stringStringHashMap.size();i++){
+			result.add(stringStringHashMap.get(i+"").toString());
+		}
+
+		if(result.size() ==0){
+			return  defaultValue;
+		}
+
+		return result;
+	}
+
+	public ArrayList<String> getValue(int resKey,  ArrayList<String> defaultValue) {
+		return getValue(this.context.getString(resKey), defaultValue);
+	}
+
+
 
 	// Get
 

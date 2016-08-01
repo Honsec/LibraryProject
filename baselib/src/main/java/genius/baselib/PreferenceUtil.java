@@ -11,7 +11,12 @@ public class PreferenceUtil {
 
     private  static UtilsSP utilsSP;
 
-    private  static UtilsSP getInstance(Context context){
+    /**
+     *
+     * @param context Must Application Context
+     * @return
+     */
+    public  static UtilsSP getInstance(Context context){
         if(utilsSP==null){
             utilsSP = new UtilsSP(context);
         }
