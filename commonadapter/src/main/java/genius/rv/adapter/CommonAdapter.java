@@ -36,6 +36,14 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder>
         mDatas = datas;
     }
 
+    public List<T> getmDatas() {
+        return mDatas;
+    }
+
+    public void setmDatas(List<T> mDatas) {
+        this.mDatas = mDatas;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType)
     {

@@ -23,5 +23,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     //https://github.com/liaoinstan/SpringView
-    compile 'com.liaoinstan.springview:library:1.2.5'
+//    compile 'com.liaoinstan.springview:library:1.2.5'
 }

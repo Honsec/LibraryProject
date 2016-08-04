@@ -3,11 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LibraryProject.iml" filepath="$PROJECT_DIR$/LibraryProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidbootstrap/androidbootstrap.iml" filepath="$PROJECT_DIR$/androidbootstrap/androidbootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/commonadapter/commonadapter.iml" filepath="$PROJECT_DIR$/commonadapter/commonadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_baselib/baselibdemo.iml" filepath="$PROJECT_DIR$/demo_baselib/baselibdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonadapter/commonadapter.iml" filepath="$PROJECT_DIR$/commonadapter/commonadapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo_baselib/demo_baselib.iml" filepath="$PROJECT_DIR$/demo_baselib/demo_baselib.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_loadingindicator/demo_loadingindicator.iml" filepath="$PROJECT_DIR$/demo_loadingindicator/demo_loadingindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_magicindicator/demo_magicindicator.iml" filepath="$PROJECT_DIR$/demo_magicindicator/demo_magicindicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo_springview/demo_springview.iml" filepath="$PROJECT_DIR$/demo_springview/demo_springview.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_tigerdb/demo_tigerdb.iml" filepath="$PROJECT_DIR$/demo_tigerdb/demo_tigerdb.iml" />
       <module fileurl="file://$PROJECT_DIR$/hf_load_springview/hf_load_springview.iml" filepath="$PROJECT_DIR$/hf_load_springview/hf_load_springview.iml" />
       <module fileurl="file://$PROJECT_DIR$/lableview_stick/lableview_stick.iml" filepath="$PROJECT_DIR$/lableview_stick/lableview_stick.iml" />

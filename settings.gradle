@@ -1,1 +1,1 @@
-include ':tool_utils', ':baselib', ':demo_baselib', ':loadingindicator', ':hf_load_springview', ':demo_magicindicator', ':magicindicator', ':demo_loadingindicator', ':lableview_stick', ':commonadapter', ':tiger_db', ':demo_tigerdb'
+include ':tool_utils', ':baselib', ':demo_baselib', ':loadingindicator', ':demo_magicindicator', ':magicindicator', ':demo_loadingindicator', ':lableview_stick', ':commonadapter', ':tiger_db', ':demo_tigerdb', ':androidbootstrap', ':hf_load_springview', ':demo_springview'
